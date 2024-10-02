@@ -3,6 +3,19 @@ body{
     color: #c0caf5;
     font-family: 'Comfortaa', sans-serif;
 }
+#err{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+}
+#locale{
+    text-align: center;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+}
 #title{
     display: flex;
     justify-content: center;

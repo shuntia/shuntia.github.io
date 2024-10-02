@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', async function () {
+    try {
+        const response = await fetch('http://ipinfo.io?token=2786d4d01cfc25');
+        if (!response.ok) {
+            console.log(`Error: ${response.status} ${response.statusText}`);
+            document.getElementById("err").style.height="10vh";
+            document.getElementById("err").innerHTML = `
+                <a id='locale' href='./index.html'>en</a> |
+                <a id='locale' href='./ja.html'>ja</a>`;
+        } else {
+            const data = await response.json();
+            console.log("Country: " + data.country);
+            if(data.country=="JP"&!window.location.toString().includes("ja")) {
+                window.location.replace("./ja.html");
+            }else if(data.country!="JP"&&window.location.toString().includes("ja")){
+                window.location.replace("./index.html");
+            };
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById("err").innerHTML = `
+            <a id='locale' href='./index.html'>en</a> |
+            <a id='locale' href='./ja.html'>ja</a>`;
+    }
+});
+
 // Progress bar element
 var progressBar = document.getElementById('progress-bar');
 
