@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
     try {
-        const response = await fetch('http://ipinfo.io?token=2786d4d01cfc25');
+        const response = await fetch('https://ipinfo.io?token=2786d4d01cfc25');
         if (!response.ok) {
             console.log(`Error: ${response.status} ${response.statusText}`);
             document.getElementById("err").style.height="10vh";
