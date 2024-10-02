@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with Loading Progress Bar and Anime.js</title>
+    
+    <!-- Include CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Include Anime.js CDN -->
+    <script src="anime.min.js"></script>
+    <script src="script.js" defer></script> <!-- Add defer to load script after HTML -->
+</head>
+<body>
+    <!-- The overlay -->
+    <div id="overlay">
+        <div id="overlay-message">Loading...</div>
+        <div id="progress-container">
+            <div id="progress-bar"></div> <!-- No percentage text here -->
+        </div>
+    </div>
+
+    <!-- Your website content here -->
+    <div id="title"><h1 id="hero">shuntia.github.io</h1></div>
+    <div id="info"></div>
+        Homepage for shuntia!
+    </div>
+</body>
+</html>
