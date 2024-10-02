@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
     try {
-        const response = await fetch('https://ipinfo.io?token=2786d4d01cfc25');
+        const response = await fetch('https://ipapi.co/json');
         if (!response.ok) {
             console.log(`Error: ${response.status} ${response.statusText}`);
             document.getElementById("err").style.height="10vh";
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             <a id='locale' href='./ja.html'>ja</a>`;
     }
 });
-
 // Progress bar element
 var progressBar = document.getElementById('progress-bar');
 
