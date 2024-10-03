@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const response = await fetch('https://ipapi.co/json');
         if (!response.ok) {
             console.log(`Error: ${response.status} ${response.statusText}`);
-            document.getElementById('title').style.height = "90vh";
-            document.getElementById("err").style.height = "10vh";
+            document.getElementById("err").style.height = "20vh";
             document.getElementById("err").innerHTML = `
                 <a id='locale' href='./index.html'>en</a> |
                 <a id='locale' href='./ja.html'>ja</a>`;
