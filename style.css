@@ -28,9 +28,6 @@ body{
     font-size: 10vw;
     visibility: hidden;
     overflow-y: visible;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
     overflow: hidden;
 }
 /* The overlay itself */
@@ -74,8 +71,46 @@ body{
     margin-bottom: 20px;
 }
 
-#info{
+#content{
+    padding:5%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     justify-self: center;
     text-align: center;
     font-size: larger;
+}
+h1{
+    padding:5%;
+    color:#7dcfff;
+}
+h2{
+    padding:5%;
+    color:#b4f9f8;
+}
+h3{
+    padding:5%;
+    color:#bb9af7;
+}
+a{
+    flex-grow: 1;
+    color:#4fd6be;
+}
+.list{
+    color:#a9b1d6;
+    text-decoration: none;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.listitem{
+    display: flex;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #3b4261;
+    padding:1%;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+p{
+    padding:10%;
 }
