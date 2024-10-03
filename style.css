@@ -18,11 +18,13 @@ body{
 }
 #title{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     height:100vh;
 }
 #hero{
+    position:absolute;
     margin: auto;
     text-align: center;
     font-size: 10vw;
