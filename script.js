@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', async function () {
         const response = await fetch('https://ipapi.co/json');
         if (!response.ok) {
             console.log(`Error: ${response.status} ${response.statusText}`);
-            document.getElementById('title').style.height="90vh";
-            document.getElementById("err").style.height="10vh";
+            document.getElementById('title').style.height = "90vh";
+            document.getElementById("err").style.height = "10vh";
             document.getElementById("err").innerHTML = `
                 <a id='locale' href='./index.html'>en</a> |
                 <a id='locale' href='./ja.html'>ja</a>`;
         } else {
             const data = await response.json();
             console.log("Country: " + data.country);
-            if(data.country=="JP"&!window.location.toString().includes("ja")) {
+            if (data.country == "JP" & !window.location.toString().includes("ja")) {
                 window.location.replace("./ja.html");
-            }else if(data.country!="JP"&&window.location.toString().includes("ja")){
+            } else if (data.country != "JP" && window.location.toString().includes("ja")) {
                 window.location.replace("./index.html");
             };
         }
@@ -50,16 +50,16 @@ function updateProgress() {
 
     // Hide overlay when progress reaches 100%
     if (progressPercent >= 100) {
-        setTimeout(function() {
+        setTimeout(function () {
             anime({
                 targets: '#overlay',
                 opacity: [1, 0],
                 duration: 1000,
                 easing: 'easeInOutQuad',
-                complete: function() {
+                complete: function () {
                     document.getElementById('overlay').style.display = 'none';
                     var textWrapper = document.getElementById("hero");
-                    textWrapper.style.visibility="visible";
+                    textWrapper.style.visibility = "visible";
                     textWrapper.innerHTML = textWrapper.innerHTML.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
                     anime({
                         targets: '.letter',
@@ -67,7 +67,7 @@ function updateProgress() {
                         opacity: [0, 1],
                         easing: 'easeOutExpo',
                         duration: 1200,
-                        delay: function(el, i) {
+                        delay: function (el, i) {
                             return i * 80;
                         }
                     })
@@ -78,17 +78,17 @@ function updateProgress() {
 }
 
 // Listen for DOMContentLoaded and start the progress bar
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Use a forEach loop to load elements with a delay
-    allElements.forEach(function(el, index) {
-        setTimeout(function() {
+    allElements.forEach(function (el, index) {
+        setTimeout(function () {
             updateProgress();
         }, index * 50); // Stagger each element loading with 50ms delay
     });
 });
 
 document.addEventListener('scroll', () => {
-    if(!hasscrolled){
+    if (!hasscrolled) {
         hasscrolled = true;
         anime({
             targets: triangle,
