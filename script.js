@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     } catch (error) {
         console.error('Error:', error);
+        document.getElementById("err").style.height = "10vh";
+        document.getElementById("title").style.height="80vh";
         document.getElementById("err").innerHTML = `
             <a id='locale' href='./index.html'>en</a> |
             <a id='locale' href='./ja.html'>ja</a>`;
@@ -78,22 +80,21 @@ function updateProgress() {
 
 // Listen for DOMContentLoaded and start the progress bar
 document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('scroll', () => {
+        if (!hasscrolled) {
+            hasscrolled = true;
+            anime({
+                targets: triangle,
+                opacity: 0,
+                duration: 500,
+                easing: 'easeInOutQuad'
+            })
+        }
+    });
     // Use a forEach loop to load elements with a delay
     allElements.forEach(function (el, index) {
         setTimeout(function () {
             updateProgress();
         }, index * 50); // Stagger each element loading with 50ms delay
     });
-});
-
-document.addEventListener('scroll', () => {
-    if (!hasscrolled) {
-        hasscrolled = true;
-        anime({
-            targets: triangle,
-            opacity: 0,
-            duration: 500,
-            easing: 'easeInOutQuad'
-        })
-    }
 });
