@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             };
         }
     } catch (error) {
-        console.error('Error:', error);
+        console.error(error);
         document.getElementById("err").style.height = "10vh";
         document.getElementById("title").style.height="80vh";
         document.getElementById("err").innerHTML = `
