@@ -1,3 +1,5 @@
+window.scrollTo(0,0);
+
 document.addEventListener('DOMContentLoaded', async function () {
     try {
         const response = await fetch('https://ipapi.co/json');
@@ -58,6 +60,7 @@ function updateProgress() {
                 duration: 1000,
                 easing: 'easeInOutQuad',
                 complete: function () {
+                    document.body.style.overflow = "auto";
                     document.getElementById('overlay').style.display = 'none';
                     var textWrapper = document.getElementById("hero");
                     textWrapper.style.visibility = "visible";
@@ -68,8 +71,14 @@ function updateProgress() {
                         opacity: [0, 1],
                         easing: 'easeOutExpo',
                         duration: 1200,
-                        delay: function (el, i) {
-                            return i * 80;
+                        delay: anime.stagger(80),
+                        complete: function () {
+                            anime({
+                                targets: '#triangle',
+                                opacity: [0, 1],
+                                easing: 'easeOutQuad',
+                                duration: 500,
+                            })
                         }
                     })
                 }
